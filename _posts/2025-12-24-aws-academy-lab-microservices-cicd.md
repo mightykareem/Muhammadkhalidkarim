@@ -8,7 +8,7 @@ permalink: /posts/awslab-cicd/
 
 ## Approach
 
-![Solution architecture diagram showing microservices and cloud infrastructure](/assets/img/posts/image3.jpeg)
+![Solution architecture diagram showing microservices and cloud infrastructure]({{ site.baseurl }}/assets/img/posts/image3.jpeg)
 
 ## Phase 2: Analyzing the Infrastructure of the Monolithic Application
 
@@ -20,7 +20,7 @@ In this phase, I will analyze the current application infrastructure and then te
 - Find the instance named `MonolithicApp`  
 - Copy the public IPv4 address
 
-![EC2 instance management console showing MonolithicApp instance](/assets/img/posts/image4.jpeg)
+![EC2 instance management console showing MonolithicApp instance]({{ site.baseurl }}/assets/img/posts/image4.jpeg)
 >
 My MonolithicApp is already running with the public IPv4 address shown above.
 >
@@ -30,7 +30,7 @@ Copy the IPv4 address and open a new browser tab, entering it as the URL. In thi
 - Page loads using HTTP (not HTTPS)
 - Browser might show a security warning - ignore it
 
-![Web browser showing secure connection warning message](/assets/img/posts/image5.jpeg)
+![Web browser showing secure connection warning message]({{ site.baseurl }}/assets/img/posts/image5.jpeg)
 
 Home page of website is visible.
 
@@ -40,13 +40,13 @@ In this task, we will add data to the web application, test the functionality, a
 
 1. **Choose Suppliers**
 
-![Coffee suppliers page interface showing list of suppliers](/assets/img/posts/image6.jpeg)
+![Coffee suppliers page interface showing list of suppliers]({{ site.baseurl }}/assets/img/posts/image6.jpeg)
 
 Notice that the URL path includes `/suppliers`
 
 2. **Add a New Supplier**
 
-![Add supplier form with fields for company information](/assets/img/posts/image7.jpeg)
+![Add supplier form with fields for company information]({{ site.baseurl }}/assets/img/posts/image7.jpeg)
 
 Fill the form with any values and submit. Notice that the URL path includes `/supplier-add`.
 
