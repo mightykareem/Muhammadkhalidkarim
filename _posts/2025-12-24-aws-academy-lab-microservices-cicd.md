@@ -8,7 +8,7 @@ permalink: /posts/awslab-cicd/
 
 ## Approach
 
-![Solution architecture diagram showing microservices and cloud infrastructure](images/media/image3.jpeg)
+![Solution architecture diagram showing microservices and cloud infrastructure](/assets/img/posts/image3.jpeg)
 
 ## Phase 2: Analyzing the Infrastructure of the Monolithic Application
 
@@ -20,7 +20,7 @@ In this phase, I will analyze the current application infrastructure and then te
 - Find the instance named `MonolithicApp`  
 - Copy the public IPv4 address
 
-![EC2 instance management console showing MonolithicApp instance](images/media/image4.jpeg)
+![EC2 instance management console showing MonolithicApp instance](/assets/img/posts/image4.jpeg)
 >
 My MonolithicApp is already running with the public IPv4 address shown above.
 >
@@ -30,7 +30,7 @@ Copy the IPv4 address and open a new browser tab, entering it as the URL. In thi
 - Page loads using HTTP (not HTTPS)
 - Browser might show a security warning - ignore it
 
-![Web browser showing secure connection warning message](images/media/image5.jpeg)
+![Web browser showing secure connection warning message](/assets/img/posts/image5.jpeg)
 
 Home page of website is visible.
 
@@ -40,13 +40,13 @@ In this task, we will add data to the web application, test the functionality, a
 
 1. **Choose Suppliers**
 
-![Coffee suppliers page interface showing list of suppliers](images/media/image6.jpeg)
+![Coffee suppliers page interface showing list of suppliers](/assets/img/posts/image6.jpeg)
 
 Notice that the URL path includes `/suppliers`
 
 2. **Add a New Supplier**
 
-![Add supplier form with fields for company information](images/media/image7.jpeg)
+![Add supplier form with fields for company information](/assets/img/posts/image7.jpeg)
 
 Fill the form with any values and submit. Notice that the URL path includes `/supplier-add`.
 
@@ -54,21 +54,21 @@ Fill the form with any values and submit. Notice that the URL path includes `/su
 
 Select a supplier's edit button:
 
-![Suppliers list showing edit button for each entry](images/media/image8.jpeg)
+![Suppliers list showing edit button for each entry](/assets/img/posts/image8.jpeg)
 
 Select the edit button.
 >
-![Edit supplier form for updating company details](images/media/image9.jpeg)
+![Edit supplier form for updating company details](/assets/img/posts/image9.jpeg)
 >
 Notice that the URL path now includes `supplier-update/1`.
 >
 Change any field and save:
 
-![Supplier update form with modified address field](images/media/image10.jpeg)
+![Supplier update form with modified address field](/assets/img/posts/image10.jpeg)
 
 The address was changed.
 >
-![Confirmation message showing supplier changes saved successfully](images/media/image11.jpeg)
+![Confirmation message showing supplier changes saved successfully](/assets/img/posts/image11.jpeg)
 >
 Changes saved successfully.
 
@@ -80,15 +80,15 @@ After Task 2.2 works, continue:
 
 Open EC2 Instance Connect, Select **MonolithicAppServer → Connect → EC2 Instance Connect** → "Connect"
 
-![EC2 instance management console showing MonolithicApp instance](images/media/image12.jpeg)
+![EC2 instance management console showing MonolithicApp instance](/assets/img/posts/image12.jpeg)
 
 click on connect.
 
-![Image 13](images/media/image13.jpeg)
+![Image 13](/assets/img/posts/image13.jpeg)
 
 Keep everything as default and click on connect.
 >
-![Image 14](images/media/image14.jpeg)
+![Image 14](/assets/img/posts/image14.jpeg)
 >
 A new tab will open with a terminal.
 
@@ -96,7 +96,7 @@ A new tab will open with a terminal.
 
 In the terminal session, run the following command: sudo lsof -i :80
 
-![Image 15](images/media/image15.jpeg)
+![Image 15](/assets/img/posts/image15.jpeg)
 
 This shows important information about what's running on port 80 of
 the EC2 instance:
@@ -108,7 +108,7 @@ Answer: The Node.js application is running on port 80 using the TCP
 protocol. In Next, run the following command: ps -ef | head -1; ps
 -ef | grep node
 >
-![Image 16](images/media/image16.jpeg)
+![Image 16](/assets/img/posts/image16.jpeg)
 >
 This command shows process information.
 >
@@ -126,7 +126,7 @@ command.
 
 ~/resources/codebase_partner
 
-![Image 17](images/media/image17.jpeg)
+![Image 17](/assets/img/posts/image17.jpeg)
 
 This is where the index.js file exists. It contains the base
 application logic.
@@ -146,4 +146,4 @@ install.
 Prerequisites: Node.js runtime and dependencies in node_modules. Data
 Storage: External RDS MySQL database (not local).
 
-... (content continues; images under images/media/)
+... (content continues)
