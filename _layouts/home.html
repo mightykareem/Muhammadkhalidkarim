@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ site.title | default: "Muhammad Karim" }}</title>
+  <meta name="description" content="{{ site.description }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="nav">
+      <div class="logo">{{ site.social.name | default: site.title }}</div>
+      <nav class="nav-links">
+        <a href="#bio">Biography</a>
+        <a href="#projects">Projects</a>
+        <a href="#writing">Write-ups</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="pill" href="https://github.com/{{ site.github.username }}" target="_blank" rel="noreferrer">GitHub</a>
+    </header>
+
+    <main>
+      <!-- Hero / Intro -->
+      <section class="hero" id="top">
+        <div class="hero__copy">
+          <p class="eyebrow">Cloud • Network • Security</p>
+          <h1>Hands-on builder exploring secure cloud systems.</h1>
+          <p class="lede">I build labs and projects around AWS, IAM, and network security. I share practical notes and detailed writeups to help others learn with me.</p>
+          <div class="hero__actions">
+            <a class="btn primary" href="#projects">View Projects</a>
+            <a class="btn ghost" href="mailto:{{ site.email }}">Email Me</a>
+          </div>
+          <div class="hero__meta">
+            <div>
+              <span class="meta__value">{{ site.posts | size }}</span>
+              <span class="meta__label">Writeups</span>
+            </div>
+            <div>
+              <span class="meta__value">{{ site.data.projects | size }}</span>
+              <span class="meta__label">Projects</span>
+            </div>
+            <div>
+              <span class="meta__value">100%</span>
+              <span class="meta__label">Open to collabs</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero__panel">
+          <div class="panel__card">
+            <p class="panel__label">Now</p>
+            <p class="panel__title">Learning AWS Cloud Security and scalable cloud solutions.</p>
+            <p class="panel__sub">Available for internships, security tooling, and collaborations.</p>
+            <div class="panel__stack" aria-label="Technologies I enjoy">
+              <span>AWS</span>
+              <span>IAM</span>
+              <span>Terraform</span>
+              <span>Python</span>
+              <span>Networking</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Biography -->
+      <section class="section" id="bio">
+        <div class="about">
+          <div class="about__info">
+            <p class="eyebrow">About</p>
+            <h2>Biography</h2>
+            <p class="lede">I’m a cybersecurity student at FAST-NUCES focused on cloud and network security. I learn by building practical labs, breaking things safely, and documenting everything I discover.</p>
+            <ul class="about__list">
+              <li>Interests: cloud hardening, identity, secure automation</li>
+              <li>Currently learning: AWS IAM best practices and multi-account guardrails</li>
+              <li>Looking for: internships, open-source collabs, security tooling</li>
+            </ul>
+            <div class="link-list">
+              <a href="https://github.com/{{ site.github.username }}" target="_blank" rel="noreferrer">GitHub ↗</a>
+              <a href="https://www.linkedin.com/in/muhammad-karim-9464b7247" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+              <a href="mailto:{{ site.email }}">Email ↗</a>
+            </div>
+          </div>
+          <div class="about__profile">
+            <div class="avatar-wrap">
+              <img class="avatar" src="{{ site.baseurl }}/assets/img/placeholders/Muhammad.png" alt="Portrait of Muhammad" />
+              <div class="avatar__accent"></div>
+            </div>
+            <div class="about__badges">
+              <span class="badge badge--solid">Design + Dev</span>
+              <span class="badge badge--soft">Open to internships</span>
+            </div>
+            <div class="about__quick">
+              <div>
+                <p class="meta__value">Location</p>
+                <p class="meta__label">Islamabad, Pakistan</p>
+              </div>
+              <div>
+                <p class="meta__value">Focus</p>
+                <p class="meta__label">Cloud Security, Network Security</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section class="section" id="projects">
+        <div class="section__header">
+          <div>
+            <p class="eyebrow">Selected work</p>
+            <h2>Projects</h2>
+            <p class="lede">Clickable cards jump straight into the GitHub repository.</p>
+          </div>
+          <div class="section__cta">
+            <a class="btn ghost" href="https://github.com/{{ site.github.username }}?tab=repositories" target="_blank" rel="noreferrer">See all repos</a>
+          </div>
+        </div>
+        <div class="cards">
+          {% for p in site.data.projects %}
+          <article class="card">
+            {% if p.image %}
+              <img class="card__image" src="{{ site.baseurl }}/{{ p.image }}" alt="{{ p.title }} screenshot" />
+            {% endif %}
+            <h3 class="card__title">{{ p.title }}</h3>
+            <p class="card__desc">{{ p.description }}</p>
+            {% if p.technologies %}
+            <div class="tags">
+              {% for t in p.technologies %}
+              <span class="tag">{{ t }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
+            <div class="card__footer">
+              <div class="card__links">
+                <a class="btn ghost" href="{{ p.repo }}" target="_blank" rel="noreferrer">View Repo</a>
+              </div>
+              {% if p.status %}
+              <span class="badge">{{ p.status }}</span>
+              {% endif %}
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+      </section>
+
+      <!-- Writing -->
+      <section class="section" id="writing">
+        <div class="section__header">
+          <div>
+            <p class="eyebrow">Essays & notes</p>
+            <h2>Write-ups</h2>
+            <p class="lede">Markdown posts with full pages and images. Click to read.</p>
+          </div>
+        </div>
+        <div class="cards cards--list">
+          {% assign posts = site.posts | slice: 0, 6 %}
+          {% for post in posts %}
+          <article class="card">
+            <h3 class="card__title"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+            <div class="card__meta">
+              <span>{{ post.date | date: "%b %d, %Y" }}</span>
+              {% if post.tags %}
+                <span>•</span>
+                <span>{{ post.tags | join: ", " }}</span>
+              {% endif %}
+            </div>
+            <p class="card__content">{{ post.excerpt | strip_html | truncate: 160 }}</p>
+            <div class="card__footer">
+              <a class="btn ghost" href="{{ site.baseurl }}{{ post.url }}">Read full writeup</a>
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="section" id="contact">
+        <div class="contact">
+          <div>
+            <p class="eyebrow">Let’s collaborate</p>
+            <h2>Have a project or idea?</h2>
+            <p class="lede">Tell me about it. I respond quickly.</p>
+          </div>
+          <div class="contact__actions">
+            <a class="btn primary" href="mailto:{{ site.email }}">Email me</a>
+            <a class="btn ghost" href="https://cal.com/" target="_blank" rel="noreferrer">Book a call</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Built by Muhammad • Powered by GitHub Pages</p>
+      <div class="footer__links">
+        <a href="#top">Back to top</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

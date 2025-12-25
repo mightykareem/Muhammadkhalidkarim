@@ -1,0 +1,18 @@
+- title: Stock Market Simulation & Portfolio Management
+  description: >-
+    Enhanced C++ application that simulates a live stock market environment with
+    a professional portfolio management system. Real-time price fluctuations,
+    comprehensive portfolio tracking, and persistent data storage.
+  technologies: [C++, File I/O & Data Persistence, Console UI]
+  repo: https://github.com/MightyKareem/Stock-Market-Simulation-and-Portfolio-Management
+  image: assets/img/stockmarket.png
+  status: Live
+
+- title: Browser-Forensic-Analyzer / Unsaved Notepad++ Viewer
+  description: >-
+    Windows-focused desktop tool for analyzing Chrome/Edge artifacts, SQLite
+    files, and NTFS metadata with a modern Tkinter GUI.
+  technologies: [Python, Tkinter, SQLite3, Cryptography, Windows DPAPI]
+  repo: https://github.com/MightyKareem/Browser-Forensic-Analyzer
+  image: assets/img/History_Chrome.png
+  status: Live
