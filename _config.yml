@@ -1,0 +1,59 @@
+title: "Muhammad Karim | Cybersecurity"
+tagline: "Cloud and network security notes"
+description: "Cybersecurity student exploring cloud security, networks, and secure systems."
+lang: en
+timezone: Asia/Karachi
+
+url: "https://mightykareem.github.io"
+baseurl: "/Muhammadkhalidkarim" # Set to '' if using a user/organization pages repo
+
+theme: jekyll-theme-chirpy
+paginate: 10
+paginate_path: /page:num/
+permalink: /:year/:month/:day/:title/
+
+github:
+  username: MightyKareem
+
+social:
+  name: "Muhammad Karim"
+  links:
+    - https://github.com/MightyKareem
+    - https://www.linkedin.com/in/muhammad-karim-9464b7247
+
+email: "muhammadd.khalidkarim@gmail.com"
+
+plugins:
+  - jekyll-paginate
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-archives
+  - jekyll-sitemap
+  - jekyll-feed
+
+sass:
+  style: compressed
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
+
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
+
+exclude:
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.old.md
