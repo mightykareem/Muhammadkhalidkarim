@@ -1,4 +1,13 @@
-﻿# Coffee Suppliers Microservices Architecture Project
+---
+layout: post
+title: "AWS Academy Lab: Microservices & CI/CD"
+date: 2025-12-24 10:00:00 +0500
+categories: [Labs, AWS]
+tags: [cloud, aws, devops, microservices, cicd]
+description: "Deep dive into AWS Academy lab on breaking down monolithic applications into microservices with CI/CD."
+---
+
+ # Coffee Suppliers Microservices Architecture Project
 
 **Date:** December 12, 2025
 
@@ -2972,6 +2981,7 @@ ECS â†’ Clusters â†’ microservices-serverlesscluster â†’ Services
 ![Image 289]({{ site.baseurl }}/assets/img/posts/image289.jpeg)
 
 This ends the lab.
+
 
 
 
