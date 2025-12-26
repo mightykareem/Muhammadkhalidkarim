@@ -8,9 +8,11 @@ url: "https://mightykareem.github.io"
 baseurl: "/Muhammadkhalidkarim" # Set to '' if using a user/organization pages repo
 
 # theme: jekyll-theme-chirpy  # DISABLED - using custom layouts instead
-paginate: 10
-paginate_path: /page:num/
 permalink: /writeups/:title/
+
+# Ensure HTML files are processed
+include:
+  - "_pages"
 
 github:
   username: MightyKareem
