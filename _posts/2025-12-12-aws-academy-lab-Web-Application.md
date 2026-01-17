@@ -1,3 +1,12 @@
+---
+layout: post
+title: "AWS Academy Lab: Web Application Builder"
+date: 2025-12-12 10:00:00 +0500
+categories: [Labs, AWS]
+tags: [cloud, aws, Web]
+description: "Learning to Deploy Web Application in AWS"
+---
+
 # Building a Highly Available, Scalable Web Application
 
 ## Overview and Objectives
@@ -739,5 +748,6 @@ The system automatically scaled down:
 - Cost was optimized by running only necessary instances
 
 ![Auto Scaling Response to Load Test]({{ site.baseurl }}/assets/img/posts/aws1/23.png)
+
 
 This load testing validated that the solution successfully met the scalability and high availability requirements, automatically adapting to varying demand patterns while maintaining application performance.
