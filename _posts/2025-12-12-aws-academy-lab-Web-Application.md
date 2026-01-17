@@ -95,7 +95,7 @@ I started by creating a virtual private cloud (VPC) that would serve as the isol
   - Tenancy: Default
 - Click Create VPC
 
-![VPC Creation: Configuration of StudentApp-VPC with 10.0.0.0/16 CIDR block](assets/img/posts/aws1/1.png)
+![VPC Creation: Configuration of StudentApp-VPC with 10.0.0.0/16 CIDR block](github/assets/img/posts/aws1/1.png)
 
 **Step 2: Create Public Subnet**
 
@@ -109,7 +109,7 @@ Next, I created a public subnet within the VPC to host the EC2 instance. This su
   - IPv4 CIDR: 10.0.1.0/24
 - Click Create subnet
 
-![Public Subnet Creation in Availability Zone us-east-1a](assets/img/posts/aws1/1b.png)
+![Public Subnet Creation in Availability Zone us-east-1a](github/assets/img/posts/aws1/1b.png)
 
 **Step 3: Create and Attach Internet Gateway**
 
@@ -119,7 +119,7 @@ To enable internet connectivity for resources in the public subnet, I created an
 - Name: StudentApp-IGW → Create
 - Select the IGW → Actions → Attach to VPC → StudentApp-VPC
 
-![Internet Gateway Creation and Attachment](assets/img/posts/aws1/1c.png)
+![Internet Gateway Creation and Attachment](github/assets/img/posts/aws1/1c.png)
 
 **Step 4: Configure Route Table**
 
@@ -131,7 +131,7 @@ I configured the route table to direct internet-bound traffic through the Intern
   - Target: Internet Gateway (StudentApp-IGW)
 - Save routes
 
-![Route Table Configuration with Default Route to IGW](assets/img/posts/aws1/1d.png)
+![Route Table Configuration with Default Route to IGW](github/assets/img/posts/aws1/1d.png)
 
 **Step 5: Associate Subnet**
 
@@ -139,7 +139,7 @@ Finally, I associated the public subnet with the route table to ensure all traff
 
 - Go to Subnet Associations → Associate Public-Subnet
 
-![Subnet Association with Route Table](assets/img/posts/aws1/1e.png)
+![Subnet Association with Route Table](github/assets/img/posts/aws1/1e.png)
 
 With these steps complete, the VPC is now properly configured and internet-accessible, providing a secure, isolated network environment for the application.
 
@@ -158,7 +158,7 @@ I created a virtual machine to host the web application using Amazon EC2 with th
 - Architecture: 64-bit (x86)
 - Instance type: t3.micro
 
-![Select Ubuntu AMI and Instance Type](assets/img/posts/aws1/2.png)
+![Select Ubuntu AMI and Instance Type](github/assets/img/posts/aws1/2.png)
 
 **Step 3: Network Settings**
 
@@ -175,7 +175,7 @@ Create a new security group:
   - HTTP (80) → 0.0.0.0/0
 - Outbound: Allow all
 
-![Configure Network Settings and Security Group](assets/img/posts/aws1/2b.png)
+![Configure Network Settings and Security Group](github/assets/img/posts/aws1/2b.png)
 
 **Step 5: User Data (IMPORTANT)**
 
@@ -188,7 +188,7 @@ This script automatically:
 - Deploys the student records app
 - Starts the application
 
-![Add User Data Script](assets/img/posts/aws1/2c.png)
+![Add User Data Script](github/assets/img/posts/aws1/2c.png)
 
 **Step 6: Launch Instance**
 
@@ -198,7 +198,7 @@ This script automatically:
   - Instance state: Running
   - Status checks: 2/2 passed
 
-![Instance Running with Status Checks Passed](assets/img/posts/aws1/2d.png)
+![Instance Running with Status Checks Passed](github/assets/img/posts/aws1/2d.png)
 
 
 #### Task 3: Testing the Deployment
@@ -214,7 +214,7 @@ I tested the deployment by accessing the web application from the internet using
   http://<EC2-PUBLIC-IP>
   ```
 
-![Student Records Application Running](assets/img/posts/aws1/3.png)
+![Student Records Application Running](github/assets/img/posts/aws1/3.png)
 
 **Step 2: Functional Testing (CRITICAL)**
 
@@ -227,11 +227,11 @@ Perform all CRUD operations to verify the application:
 
 All operations should complete without noticeable delay.
 
-![Add Student Record](assets/img/posts/aws1/3b.png)
+![Add Student Record](github/assets/img/posts/aws1/3b.png)
 
-![Modify and Delete Records](assets/img/posts/aws1/3c.png)
+![Modify and Delete Records](github/assets/img/posts/aws1/3c.png)
 
-![Verify Records Updated](assets/img/posts/aws1/3d.png)
+![Verify Records Updated](github/assets/img/posts/aws1/3d.png)
 
 
 ### Phase 3: Decoupling the Application Components
@@ -252,7 +252,7 @@ I updated the virtual network components to support hosting the database separat
   - IPv4 CIDR: 10.0.2.0/24
 - Click Create subnet
 
-![Create Private Subnet in AZ-1](assets/img/posts/aws1/4.png)
+![Create Private Subnet in AZ-1](github/assets/img/posts/aws1/4.png)
 
 **Step 2: Create Private Subnet (AZ-2)**
 
@@ -266,7 +266,7 @@ I updated the virtual network components to support hosting the database separat
 
 **Important:** Do NOT attach an Internet Gateway to these subnets—they should remain private and only accessible from your EC2 instances.
 
-![Create Private Subnet in AZ-2](assets/img/posts/aws1/4b.png)
+![Create Private Subnet in AZ-2](github/assets/img/posts/aws1/4b.png)
 
 #### Task 2: Creating and Configuring the Amazon RDS Database
 
@@ -283,7 +283,7 @@ I created an Amazon RDS database running MySQL and configured it to allow only t
     - Private-Subnet-B
 - Click Create
 
-![Create DB Subnet Group](assets/img/posts/aws1/5.png)
+![Create DB Subnet Group](github/assets/img/posts/aws1/5.png)
 
 **Step 2: Create RDS MySQL Database**
 
@@ -304,9 +304,9 @@ I created an Amazon RDS database running MySQL and configured it to allow only t
   - Additional configuration: Disable Enhanced Monitoring
 - Click Create database
 
-![Configure RDS Instance](assets/img/posts/aws1/6.png)
+![Configure RDS Instance](github/assets/img/posts/aws1/6.png)
 
-![RDS Database Created Successfully](assets/img/posts/aws1/6b.png)
+![RDS Database Created Successfully](github/assets/img/posts/aws1/6b.png)
 
 **Step 3: Configure RDS Security Group**
 
@@ -316,7 +316,7 @@ I created an Amazon RDS database running MySQL and configured it to allow only t
   - Source: Security group ID (StudentApp-SG)
   - This ensures only your EC2 application server can access the database
 
-![RDS Security Group Inbound Rule](assets/img/posts/aws1/7.png)
+![RDS Security Group Inbound Rule](github/assets/img/posts/aws1/7.png)
 
 #### Task 3: Configuring the Development Environment
 
@@ -333,9 +333,9 @@ I provisioned an AWS Cloud9 environment with a t3.micro instance to run AWS CLI 
   - Network settings: Default
 - Click Create
 
-![Create Cloud9 Environment](assets/img/posts/aws1/8.png)
+![Create Cloud9 Environment](github/assets/img/posts/aws1/8.png)
 
-![Cloud9 Environment Details](assets/img/posts/aws1/8b.png)
+![Cloud9 Environment Details](github/assets/img/posts/aws1/8b.png)
 
 **Step 2: Connect and Access Cloud9 IDE**
 
@@ -343,7 +343,7 @@ I provisioned an AWS Cloud9 environment with a t3.micro instance to run AWS CLI 
 - Terminal opens automatically at the bottom
 - You now have a command line interface to run AWS CLI commands
 
-![Cloud9 IDE with Terminal Ready](assets/img/posts/aws1/9.png)
+![Cloud9 IDE with Terminal Ready](github/assets/img/posts/aws1/9.png)
 
 
 #### Task 4: Provisioning Secrets Manager
@@ -356,7 +356,7 @@ I used AWS Secrets Manager to create a secret storing the database credentials a
 - In Cloud9, click File → Upload → select the cloud9-scripts.yml file
 - The file will be uploaded to your Cloud9 environment
 
-![Upload Scripts to Cloud9](assets/img/posts/aws1/10.png)
+![Upload Scripts to Cloud9](github/assets/img/posts/aws1/10.png)
 
 **Step 2: Prepare the Secret Creation Command**
 
@@ -369,7 +369,7 @@ The script contains placeholders that must be replaced with your actual RDS data
 
 Example after substitution:
 
-![Secret Creation Command with Values](assets/img/posts/aws1/10b.png)
+![Secret Creation Command with Values](github/assets/img/posts/aws1/10b.png)
 
 **Step 3: Create the Secret**
 
@@ -387,7 +387,7 @@ This creates a secret in Secrets Manager containing:
 - DB endpoint
 - DB name
 
-![Secret Created in Secrets Manager](assets/img/posts/aws1/10c.png)
+![Secret Created in Secrets Manager](github/assets/img/posts/aws1/10c.png)
 
 Verify in: **Secrets Manager → Secrets** (the secret should be listed and accessible)
 
@@ -431,11 +431,11 @@ Create or select security group with inbound rules:
 - Review configuration
 - Click Launch instance
 
-![Launch Web Server EC2 Instance](assets/img/posts/aws1/11.png)
+![Launch Web Server EC2 Instance](github/assets/img/posts/aws1/11.png)
 
-![Configure Network and IAM Role](assets/img/posts/aws1/11b.png)
+![Configure Network and IAM Role](github/assets/img/posts/aws1/11b.png)
 
-![Instance Running with Public IP](assets/img/posts/aws1/11c.png)
+![Instance Running with Public IP](github/assets/img/posts/aws1/11c.png)
 
 
 #### Task 6: Migrating the Database
@@ -519,7 +519,7 @@ A target group defines which instances receive traffic from the load balancer an
   - Health check path: /
 - Click Create target group
 
-![Target Group Configuration](assets/img/posts/aws1/16.png)
+![Target Group Configuration](github/assets/img/posts/aws1/16.png)
 
 **Step 2: Register Instances**
 
@@ -529,7 +529,7 @@ I registered the current web server instance with the target group so it receive
 - Select: StudentApp-Web-Server instance
 - Click Register targets
 
-![Instance Registration with Target Group](assets/img/posts/aws1/16b.png)
+![Instance Registration with Target Group](github/assets/img/posts/aws1/16b.png)
 
 **Step 3: Create Application Load Balancer**
 
@@ -545,7 +545,7 @@ I created the load balancer itself, configuring it to span multiple availability
     - VPC: StudentApp-VPC
     - Subnets: Public-Subnet-A and Public-Subnet-B (for multi-AZ redundancy)
 
-![Load Balancer Configuration - Network Mapping](assets/img/posts/aws1/17.png)
+![Load Balancer Configuration - Network Mapping](github/assets/img/posts/aws1/17.png)
 
 **Step 4: Configure Security Group and Listener**
 
@@ -559,7 +559,7 @@ I configured security group rules to allow HTTP traffic and set up the listener 
   - Default action: Forward to studentapp-tg
 - Click Create load balancer
 
-![Load Balancer Listener Configuration](assets/img/posts/aws1/17b.png)
+![Load Balancer Listener Configuration](github/assets/img/posts/aws1/17b.png)
 
 The Application Load Balancer is now ready to distribute traffic across web server instances, providing a single, stable endpoint for users to access the application.
 #### Task 2: Implementing Amazon EC2 Auto Scaling
@@ -578,9 +578,9 @@ I created an Amazon Machine Image (AMI) from the configured web server instance 
 - Click Create image
 - Wait for AMI status to show "Available"
 
-![Creating AMI from Running Instance](assets/img/posts/aws1/15.png)
+![Creating AMI from Running Instance](github/assets/img/posts/aws1/15.png)
 
-![AMI Successfully Created and Available](assets/img/posts/aws1/15b.png)
+![AMI Successfully Created and Available](github/assets/img/posts/aws1/15b.png)
 
 **Step 2: Create Launch Template**
 
@@ -614,9 +614,9 @@ The Auto Scaling group manages automatic launching and termination of instances 
     - Target tracking policy: CPU utilization 50%
     - This enables automatic scale-up when CPU exceeds 50% and scale-down when it drops below
 
-![Auto Scaling Group Configuration and Scaling Policy](assets/img/posts/aws1/18.png)
+![Auto Scaling Group Configuration and Scaling Policy](github/assets/img/posts/aws1/18.png)
 
-![Auto Scaling Group Size and Capacity Settings](assets/img/posts/aws1/19.png)
+![Auto Scaling Group Size and Capacity Settings](github/assets/img/posts/aws1/19.png)
 
 - Click Create Auto Scaling Group
 
@@ -629,7 +629,7 @@ Once created, the Auto Scaling group will:
 - Automatically terminate instances when CPU drops and demand decreases
 - Maintain at least the minimum number of instances running at all times
 
-![Auto Scaling Group Active with Multiple Instances Running](assets/img/posts/aws1/20.png)
+![Auto Scaling Group Active with Multiple Instances Running](github/assets/img/posts/aws1/20.png)
 
 The application is now automatically scalable, responding dynamically to changes in user demand.
 
@@ -665,7 +665,7 @@ All operations completed successfully with responsive performance, confirming th
 - The application accesses the RDS database correctly
 - Users can interact with the application transparently, unaware of the underlying distributed infrastructure
 
-![Application Accessed Through Load Balancer Endpoint](assets/img/posts/aws1/21.png)
+![Application Accessed Through Load Balancer Endpoint](github/assets/img/posts/aws1/21.png)
 
 #### Task 4: Load Testing the Application
 
@@ -700,7 +700,7 @@ The Apache Benchmark tool provided metrics including:
 - Minimum and maximum response times
 - Failed requests (if any)
 
-![Load Testing Results from Cloud9](assets/img/posts/aws1/22.png)
+![Load Testing Results from Cloud9](github/assets/img/posts/aws1/22.png)
 
 **Step 3: Monitor Auto Scaling**
 
@@ -738,6 +738,6 @@ The system automatically scaled down:
 - The group returned to the minimum configured capacity
 - Cost was optimized by running only necessary instances
 
-![Auto Scaling Response to Load Test](assets/img/posts/aws1/23.png)
+![Auto Scaling Response to Load Test](github/assets/img/posts/aws1/23.png)
 
 This load testing validated that the solution successfully met the scalability and high availability requirements, automatically adapting to varying demand patterns while maintaining application performance.
