@@ -46,3 +46,14 @@
   repo: https://github.com/mightykareem/Filmception
   image: assets/img/interface_filmception.png
   status: Live
+
+
+- title: High-Rate Network Traffic Analyzer (MPI)
+  description: >-
+    A high-performance distributed DDoS detection and mitigation framework built using MPI, designed to analyze high-rate 
+    network traffic in parallel across multiple nodes. The system detects DDoS attacks in real time and applies blocking
+    mechanisms while evaluating scalability and performance.
+  technologies: [Python, C, MPI, PDC, RandomForest,statistical detectors]
+  repo: https://github.com/mightykareem/High-Rate-Network-Traffic-Analyzer-for-Early-DDoS-Detection-and-Mitigation-using-MPI
+  image: assets/img/interface_ddosmpi.png
+  status: Live
