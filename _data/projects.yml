@@ -6,7 +6,7 @@
   technologies: [C++, File I/O & Data Persistence, Console UI]
   repo: https://github.com/MightyKareem/Stock-Market-Simulation-and-Portfolio-Management
   image: assets/img/stockmarket.png
-  status: Live
+  status: Completed
 
 - title: Browser-Forensic-Analyzer / Unsaved Notepad++ Viewer
   description: >-
@@ -15,7 +15,7 @@
   technologies: [Python, Tkinter, SQLite3, Cryptography, Windows DPAPI]
   repo: https://github.com/MightyKareem/Browser-Forensic-Analyzer
   image: assets/img/History_Chrome.png
-  status: Live
+  status: Completed
 
 - title: Remote-Health-Monitoring-System
   description: >-
@@ -24,7 +24,7 @@
   technologies: [C++, OOP, Encryption, File Handling]
   repo: https://github.com/mightykareem/Remote-Health-Monitoring-System
   image: assets/img/Main.png
-  status: Live
+  status: Completed
 
 - title: Garbage-Collection-System
   description: >-
@@ -34,7 +34,8 @@
   technologies: [C++, DSA, Dijkstra, File Handling]
   repo: https://github.com/mightykareem/Garbage-Collection-System
   image: assets/img/garbagehome.png
-  status: Live
+  status: Completed
+
 
 
 - title: Filmception
@@ -45,7 +46,7 @@
   technologies: [Python, AI]
   repo: https://github.com/mightykareem/Filmception
   image: assets/img/interface_filmception.png
-  status: Live
+  status: Completed
 
 
 - title: High-Rate Network Traffic Analyzer (MPI)
@@ -56,4 +57,15 @@
   technologies: [Python, C, MPI, PDC, RandomForest,statistical detectors]
   repo: https://github.com/mightykareem/High-Rate-Network-Traffic-Analyzer-for-Early-DDoS-Detection-and-Mitigation-using-MPI
   image: assets/img/interface_ddosmpi.png
-  status: Live
+  status: Completed
+
+- title: IBE-Boneh-Franklin-Chat-App
+  description: >-
+    A secure messaging application implementing the Boneh–Franklin Identity-Based Encryption (IBE) scheme.
+    The system demonstrates pairing-based elliptic curve cryptography with real-time encryption/decryption,
+    conversation history, and an interactive GUI for identity-based secure communication.
+  technologies: [Python, Elliptic Curve Cryptography, Identity-Based Encryption, Tkinter, Pairing-Based Cryptography]
+  repo: https://github.com/mightykareem/ibe-boneh-franklin-chat-app
+  image: assets/img/ibe-chat-app.png
+  status: Completed
+
